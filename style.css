@@ -1,0 +1,186 @@
+@font-face {
+  font-family: RedHaTitalics;
+  src: url(./assets/fonts/RedHatText-Italic-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: Redhat;
+  src: url(./assets/fonts/RedHatText-VariableFont_wght.ttf);
+}
+body {
+  margin: 0px;
+  padding: 88px 0px;
+  background-color: #fcf8f6;
+  font-family: Redhat;
+}
+@media (max-width: 1280px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    gap: 32px;
+  }
+  body {
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 24px;
+  }
+}
+.addtocart {
+  font-family: Redhat;
+  width: 150px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid #ad8a85;
+  background-color: #fff;
+  color: #260f08;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: -15px;
+  margin: auto;
+}
+.short-name {
+  font-family: Redhat;
+  color: #87635a;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+}
+.long-name {
+  font-family: Redhat;
+  color: #260f08;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.price {
+  font-family: Redhat;
+  color: #c73b0f;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+}
+.product-img-desk {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.grid {
+  width: 800px;
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  column-gap: 24px;
+  row-gap: 32px;
+}
+.cart {
+  width: 384px;
+  flex-shrink: 0;
+  background-color: white;
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  border-radius: 12px;
+}
+.main {
+  width: 1216px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 32px;
+  margin: auto;
+}
+.cart-cake {
+  height: 128px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0px;
+}
+h1.cart-heading {
+  color: #c73b0f;
+  font-family: Redhat;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0px;
+}
+p.cartpara {
+  color: #87635a;
+  text-align: center;
+  font-family: Redhat;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0px;
+}
+.img {
+  position: relative;
+}
+.additem {
+  width: 160px;
+  display: flex;
+  height: 44px;
+  padding: 0px 12px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 999px;
+  background: #c73b0f;
+  margin: auto;
+  color: #fff;
+  font-family: RedHat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: -15px;
+  margin: auto;
+
+}
+.additem > button {
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  background-color: #c73b0f;
+  cursor: pointer;
+}
+.meta{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.product{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  position: relative;
+}
