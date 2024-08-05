@@ -7,31 +7,18 @@
   src: url(./assets/fonts/RedHatText-VariableFont_wght.ttf);
 }
 body {
-  margin: 0px;
-  padding: 88px 0px;
+  margin: 0;
+  padding: 88px 0;
   background-color: #fcf8f6;
   font-family: Redhat;
 }
-@media (max-width: 1280px) {
-  .container {
-    width: 90%;
-  }
-}
-
-@media (max-width: 900px) {
-  .container {
-    flex-direction: column;
-    gap: 32px;
-  }
-  body {
-    padding-top: 40px;
-  }
-}
-
-@media (max-width: 600px) {
-  body {
-    padding-top: 24px;
-  }
+.main {
+  width: 1216px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 32px;
+  margin: auto;
 }
 .addtocart {
   font-family: Redhat;
@@ -42,15 +29,14 @@ body {
   background-color: #fff;
   color: #260f08;
   font-size: 0.875rem;
-  font-style: normal;
   font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   position: absolute;
-  left: 0px;
-  right: 0px;
+  left: 0;
+  right: 0;
   bottom: -15px;
   margin: auto;
 }
@@ -58,7 +44,6 @@ body {
   font-family: Redhat;
   color: #87635a;
   font-size: 0.875rem;
-  font-style: normal;
   font-weight: 400;
 }
 .long-name {
@@ -71,7 +56,6 @@ body {
   font-family: Redhat;
   color: #c73b0f;
   font-size: 1rem;
-  font-style: normal;
   font-weight: 600;
 }
 .product-img-desk {
@@ -87,8 +71,7 @@ body {
   row-gap: 32px;
 }
 .cart {
-  width: 384px;
-  flex-shrink: 0;
+  width: 400px;
   background-color: white;
   display: flex;
   padding: 24px;
@@ -96,44 +79,67 @@ body {
   align-items: flex-start;
   gap: 24px;
   border-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
-.main {
-  width: 1216px;
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  gap: 32px;
-  margin: auto;
-}
-.cart-cake {
-  height: 128px;
-  cursor: pointer;
+.cart-products {
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.product-in-cart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+.product-cart-remove {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: 1px solid #ad8a85;
+  background-color: transparent;
+  padding: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.cart-cake {
+  height: 128px;
+  width: 100%;
   gap: 16px;
-  padding: 16px 0px;
+  padding: 16px 0;
 }
 h1.cart-heading {
   color: #c73b0f;
   font-family: Redhat;
   font-size: 1.5rem;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
-  margin: 0px;
+  margin: 0;
 }
-p.cartpara {
+.cart-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.cartpara {
   color: #87635a;
-  text-align: center;
   font-family: Redhat;
   font-size: 0.875rem;
-  font-style: normal;
   font-weight: 600;
-  line-height: normal;
-  margin: 0px;
+  margin: 0;
+  text-align: center;
 }
 .img {
   position: relative;
@@ -142,29 +148,26 @@ p.cartpara {
   width: 160px;
   display: flex;
   height: 44px;
-  padding: 0px 12px;
+  padding: 0 12px;
   justify-content: space-between;
   align-items: center;
   border-radius: 999px;
   background: #c73b0f;
   margin: auto;
   color: #fff;
-  font-family: RedHat;
+  font-family: Redhat;
   font-size: 14px;
-  font-style: normal;
   font-weight: 600;
   position: absolute;
-  left: 0px;
-  right: 0px;
+  left: 0;
+  right: 0;
   bottom: -15px;
-  margin: auto;
-
 }
 .additem > button {
   border-radius: 100%;
   width: 20px;
   height: 20px;
-  padding: 0px;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,15 +175,142 @@ p.cartpara {
   background-color: #c73b0f;
   cursor: pointer;
 }
-.meta{
+.meta {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-.product{
+.product {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 38px;
   position: relative;
+}
+.decrement,
+.increment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-in-cart-name {
+  color: #260f08;
+  font-family: Redhat;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0;
+}
+.product-in-cart-meta {
+  display: flex;
+  gap: 10px;
+}
+.product-in-cart-meta > p:nth-of-type(1) {
+  color: #c73b0f;
+  font-family: Redhat;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0;
+}
+.product-in-cart-meta > p:nth-of-type(2),
+.product-in-cart-meta > p:nth-of-type(3) {
+  color: #87635a;
+  font-family: Redhat;
+  font-size: 0.875rem;
+  margin: 0;
+}
+.product-in-cart-meta > p:nth-of-type(3) {
+  font-weight: 600;
+}
+.close-but-svg {
+  width: 8.75px;
+  height: 8.75px;
+}
+.confirm-order {
+  width: 100%;
+  height: 53px;
+  border-radius: 999px;
+  background-color: #c73b0f;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-family: Redhat;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.carbon-box {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: #fcf8f6;
+  border-radius: 8px;
+}
+.order-total {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #260f08;
+  font-family: Redhat;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.order-total > p {
+  color: #260f08;
+  font-family: Redhat;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+.aftercart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+@media (max-width: 1024px) {
+  .main {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 16px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  .cart {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .main {
+    padding: 0 8px;
+  }
+  .cart {
+    width: 100%;
+    padding: 16px;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    padding: 56px 0;
+  }
+  .main {
+    padding: 0 8px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
 }
