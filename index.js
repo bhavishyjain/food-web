@@ -2,6 +2,8 @@ const products = [
   {
     imgSrc: './assets/images/image-waffle-desktop.jpg',
     imgThub: './assets/images/image-waffle-thumbnail.jpg',
+    imgMob: './assets/images/image-waffle-mobile.jpg',
+    imgTab: './assets/images/image-waffle-tablet.jpg',
     shortName: 'Waffle',
     longName: 'Waffle with Berries',
     price: '$6.50',
@@ -9,6 +11,8 @@ const products = [
   {
     imgSrc: './assets/images/image-creme-brulee-desktop.jpg',
     imgThub: './assets/images/image-creme-brulee-thumbnail.jpg',
+    imgMob: './assets/images/image-creme-brulee-mobile.jpg',
+    imgTab: './assets/images/image-creme-brulee-tablet.jpg',
     shortName: 'Crème Brûlée',
     longName: 'Vanilla Bean Crème Brûlée',
     price: '$7.00',
@@ -16,6 +20,8 @@ const products = [
   {
     imgSrc: './assets/images/image-macaron-desktop.jpg',
     imgThub: './assets/images/image-macaron-thumbnail.jpg',
+    imgMob: './assets/images/image-macaron-mobile.jpg',
+    imgTab: './assets/images/image-macaron-tablet.jpg',
     shortName: 'Macaron',
     longName: 'Macaron Mix of Five',
     price: '$8.00',
@@ -23,6 +29,8 @@ const products = [
   {
     imgSrc: './assets/images/image-tiramisu-desktop.jpg',
     imgThub: './assets/images/image-tiramisu-thumbnail.jpg',
+    imgMob: './assets/images/image-tiramisu-mobile.jpg',
+    imgTab: './assets/images/image-tiramisu-tablet.jpg',
     shortName: 'Tiramisu',
     longName: 'Classic Tiramisu',
     price: '$5.50',
@@ -30,6 +38,8 @@ const products = [
   {
     imgSrc: './assets/images/image-baklava-desktop.jpg',
     imgThub: './assets/images/image-baklava-thumbnail.jpg',
+    imgMob: './assets/images/image-baklava-mobile.jpg',
+    imgTab: './assets/images/image-baklava-tablet.jpg',
     shortName: 'Baklava',
     longName: 'Pistachio Baklava',
     price: '$4.00',
@@ -37,6 +47,8 @@ const products = [
   {
     imgSrc: './assets/images/image-meringue-desktop.jpg',
     imgThub: './assets/images/image-meringue-thumbnail.jpg',
+    imgMob: './assets/images/image-meringue-mobile.jpg',
+    imgTab: './assets/images/image-meringue-tablet.jpg',
     shortName: 'Pie',
     longName: 'Lemon Meringue Pie',
     price: '$5.00',
@@ -44,6 +56,8 @@ const products = [
   {
     imgSrc: './assets/images/image-cake-desktop.jpg',
     imgThub: './assets/images/image-cake-thumbnail.jpg',
+    imgMob: './assets/images/image-cake-mobile.jpg',
+    imgTab: './assets/images/image-cake-tablet.jpg',
     shortName: 'Cake',
     longName: 'Red Velvet Cake',
     price: '$4.50',
@@ -51,6 +65,8 @@ const products = [
   {
     imgSrc: './assets/images/image-brownie-desktop.jpg',
     imgThub: './assets/images/image-brownie-thumbnail.jpg',
+    imgMob: './assets/images/image-brownie-mobile.jpg',
+    imgTab: './assets/images/image-brownie-tablet.jpg',
     shortName: 'Brownie',
     longName: 'Salted Caramel Brownie',
     price: '$4.50',
@@ -58,6 +74,8 @@ const products = [
   {
     imgSrc: './assets/images/image-panna-cotta-desktop.jpg',
     imgThub: './assets/images/image-panna-cotta-thumbnail.jpg',
+    imgMob: './assets/images/image-panna-cotta-mobile.jpg',
+    imgTab: './assets/images/image-panna-cotta-tablet.jpg',
     shortName: 'Panna Cotta',
     longName: 'Vanilla Panna Cotta',
     price: '$6.50',
@@ -350,7 +368,12 @@ window.onload = function () {
     productDiv.classList.add('product');
     productDiv.innerHTML = `
       <div class="img">
-        <img class="product-img-desk" src="${product.imgSrc}">
+        <picture>
+          <source class="source-desktop" srcset="${product.imgSrc}" media="(min-width: 1024px)">
+          <source class="source-tablet" srcset="${product.imgTab}" media="(min-width: 768px) and (max-width: 1023px)">
+          <source class="source-mobile" srcset="${product.imgMob}" media="(max-width: 767px)">
+          <img class="product-img-desk" src="${product.imgSrc}" alt="${product.longName}">
+        </picture>
         <div class="but-div">
           <button onclick="cartclick(this)" class="addtocart">
             <img style="margin-right:4px" src="./assets/images/icon-add-to-cart.svg" alt="addtocart" />
@@ -380,3 +403,5 @@ window.onload = function () {
     grid.appendChild(productDiv);
   });
 };
+
+
