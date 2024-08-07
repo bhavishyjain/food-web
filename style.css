@@ -80,6 +80,9 @@ body {
   gap: 32px;
   margin: auto;
 }
+.heading h1{
+  font-size: 3rem;
+}
 .addtocart {
   font-family: Redhat;
   width: 150px;
@@ -213,6 +216,7 @@ h1.cart-heading {
   font-weight: 600;
   margin: 0;
   text-align: center;
+  margin-top: 10px
 }
 .img {
   position: relative;
