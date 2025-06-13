@@ -404,12 +404,26 @@ function removeFromCart(productId) {
 
 // Update product display (show/hide quantity controls)
 function updateProductDisplay(productId) {
+  // Find the product card using the more specific selector
   const productCard = document.querySelector(
-    `[data-product-id="${productId}"]`
+    `.product-card[data-product-id="${productId}"]`
   );
+
+  if (!productCard) {
+    console.error(`Product card not found for ID: ${productId}`);
+    return;
+  }
+
   const addBtn = productCard.querySelector(".add-to-cart-btn");
   const quantityControls = productCard.querySelector(".quantity-controls");
-  const quantityDisplay = quantityControls.querySelector(".quantity-display");
+  const quantityDisplay = quantityControls
+    ? quantityControls.querySelector(".quantity-display")
+    : null;
+
+  if (!addBtn || !quantityControls || !quantityDisplay) {
+    console.error(`Required elements not found in product card ${productId}`);
+    return;
+  }
 
   if (cart[productId] && cart[productId].quantity > 0) {
     addBtn.style.display = "none";
@@ -572,10 +586,11 @@ function startNewOrder() {
   cart = {};
   cartQuantity = 0;
 
-  // Reset all product displays
   document.querySelectorAll(".product-card").forEach((card) => {
-    const productId = card.dataset.productId;
-    updateProductDisplay(productId);
+    const productId = parseInt(card.dataset.productId);
+    if (!isNaN(productId)) {
+      updateProductDisplay(productId);
+    }
   });
 
   updateCartDisplay();

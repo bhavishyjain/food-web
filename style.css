@@ -482,6 +482,15 @@ body {
 }
 
 /* Products Section */
+.products-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 3rem;
+  align-items: start;
+  position: relative;
+}
+
 .products-section {
   margin-bottom: 2rem;
 }
