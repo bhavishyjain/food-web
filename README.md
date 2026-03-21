@@ -88,7 +88,7 @@ _Coming soon to make your dessert experience even sweeter:_
 _Digital Artisan & Code Enthusiast_
 
 [![GitHub](https://img.shields.io/badge/GitHub-@bhavishyjain-181717?style=for-the-badge&logo=github)](https://github.com/bhavishyjain)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit_Now-FF6B6B?style=for-the-badge&logo=safari)](https://bhavishyjain.vercel.app/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit_Now-FF6B6B?style=for-the-badge&logo=safari)](https://bhavishyjain.com/)
 
 ---
 
